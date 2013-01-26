@@ -1,0 +1,147 @@
+// VEGAS MAP / LESS
+
+// VARIABLES
+ 
+@black: #333;
+@color: #48EDFF;
+@z-index-ui: 20;
+@z-index-map: -10;
+
+
+@font-face {
+    font-family: Liberator;
+    src: url('../fonts/Liberator.otf');
+    font-weight: normal;
+}
+
+// MIX INS
+
+.border-radius (@radius: 10px) {
+	-webkit-border-radius: @radius;
+	-moz-border-radius:    @radius;
+ 	-ms-border-radius:     @radius;
+ 	 -o-border-radius:     @radius;
+ 	border-radius:         @radius;
+
+	-moz-background-clip:    padding;
+	-webkit-background-clip: padding-box;
+	background-clip:         padding-box;
+}
+.border-radii (@topright: 0, @bottomright: 0, @bottomleft: 0, @topleft: 0) {
+	-webkit-border-top-right-radius:    @topright;
+	-webkit-border-bottom-right-radius: @bottomright;
+	-webkit-border-bottom-left-radius:  @bottomleft;
+	-webkit-border-top-left-radius:     @topleft;
+
+	-moz-border-radius-topright:        @topright;
+	-moz-border-radius-bottomright:     @bottomright;
+	-moz-border-radius-bottomleft:      @bottomleft;
+	-moz-border-radius-topleft:         @topleft;
+
+	border-top-right-radius:            @topright;
+	border-bottom-right-radius:         @bottomright;
+	border-bottom-left-radius:          @bottomleft;
+	border-top-left-radius:             @topleft;
+
+	-moz-background-clip:    padding; 
+	-webkit-background-clip: padding-box; 
+	background-clip:         padding-box; 
+}
+.border-box (@border: 10px solid #333) {
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+	box-sizing: border-box; 
+	border: @border;
+}
+.box-shadow (@string: 0 0 7px 2px rgba(0, 0 , 0, 0.50)) {
+	-webkit-box-shadow: @string;
+	-moz-box-shadow:    @string;
+	box-shadow:         @string;
+}
+.opacity (@opacity: 0.5) {
+	-webkit-opacity: 	@opacity;
+	-moz-opacity: 		@opacity;
+	opacity: 			@opacity;
+}
+
+// CSS
+
+body {
+	background: #333;
+	margin: 0;
+}
+#header {
+	.border-radii(0, 10px, 10px, 0);
+	.box-shadow;
+	background-color: @color;
+	z-index: @z-index-ui;
+	position: absolute;
+	height: 260px;
+	width: 200px;
+	left: 120px;
+	top: 10px;
+	padding-left: 10px;
+	overflow: hidden;
+}
+
+h1 {
+	color: #fff;
+	font-family: Helvetica, sans-serif;
+	font-size: 48px;
+	padding: 0;
+	margin: 0;
+}
+
+#map {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: @z-index-map;
+	.border-box;
+}
+
+a {
+	color: @black;
+	text-decoration: none;
+}
+
+#footer {
+	.border-radii(10px, 0, 0, 10px);
+	.box-shadow;
+    font-family: Liberator, Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	background-color: @color;
+	color: #888;
+	z-index: @z-index-ui;
+	position: absolute;
+	bottom: 10px;
+	right: 180px;
+	width: 200px;
+	height: 28px;
+	padding: 18px 12px 2px;
+}
+#social {
+	margin: 0 0 0 8px;
+	padding: 0;
+	display: inline;
+	position: absolute;
+	height: 24px;
+	li {
+		list-style: none;
+		position: absolute;
+		top: -8px;
+		a {
+			height: 24px;
+			display: block;
+		}
+	}
+}
+#social-twitter {
+	width: 24px;
+	background: url('../images/social_icons.png') 0 0;
+}
+#social-facebook {
+	width: 24px;
+	left: 30px;
+	background: url('../images/social_icons.png') -24px 0;
+}
