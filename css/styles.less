@@ -3,7 +3,7 @@
 // VARIABLES
  
 @black: #333;
-@color: #48EDFF;
+@color: #ffda00;
 @z-index-ui: 20;
 @z-index-map: -10;
 
@@ -53,7 +53,7 @@
 	box-sizing: border-box; 
 	border: @border;
 }
-.box-shadow (@string: 0 0 7px 2px rgba(0, 0 , 0, 0.50)) {
+.box-shadow (@string: 0 0 20px 10px rgba(0, 0 , 0, 0.25)) {
 	-webkit-box-shadow: @string;
 	-moz-box-shadow:    @string;
 	box-shadow:         @string;
@@ -97,16 +97,14 @@ h1 {
 	margin: 0;
 }
 
-#logo {
-	.box-shadow(0 1px 5px 1px rgba(0, 0 , 0, 0.25));
+#logo{
+	z-index: @z-index-ui;
 	position: absolute;
-	width: 240px;
-	height: 60px;
-	background-color: #bfbfbf;
-	left: 105px;
-	top: 25px;
-	z-index: 40;
-	overflow: hidden;
+	height: 400px;
+	width: 400px;
+	left: 100px;
+	top: 10px;
+	background: url('../images/logo.png') no-repeat 0px 0px;
 }
 
 #map {
